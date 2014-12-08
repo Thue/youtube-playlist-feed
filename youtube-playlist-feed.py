@@ -9,6 +9,7 @@ import mod_python
 def index(req):
    key = "ReplaceMe" #EDIT THIS LINE
    if key == "ReplaceMe":
+      req.status = mod_python.apache.HTTP_INTERNAL_SERVER_ERROR
       return "Before this script can be used, you need to edit this script to set 'key = \"...\"' to your own Google API key. Get your personal key from https://developers.google.com/api-client-library/python/guide/aaa_apikeys ."
 
    #check playlistId GET argument
@@ -33,7 +34,7 @@ def index(req):
          gerror = ""
       else:
          gerror = " Error returned by googleapis.com: " + js;
-         return "Failed to fetch playlist info from Google. Your Google developer key is invalid, or Google is down."+gerror
+      return "Failed to fetch playlist info from Google. Your Google developer key is invalid, or Google is down."+gerror
    decoded = json.loads(js)
    if len(decoded["items"]) == 0:
       req.status = mod_python.apache.HTTP_BAD_REQUEST
