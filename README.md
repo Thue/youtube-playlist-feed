@@ -8,7 +8,9 @@ be used for web syndication, e.g. in a feed reader such as e.g. "feeder".
 Usage
 =====================
 
-* Get a Google API key, to allow you to query Google's YouTube API.
+* Get a Google API key, to allow you to query Google's YouTube
+  API. Google API keys are free, and kan be generated at
+  https://developers.google.com/api-client-library/python/guide/aaa_apikeys
 * Insert your API key at the top of youtube-playlist-feed.py (edit the line 'key = "ReplaceMe"')
 * Upload to your webroot
 * Enable mod_python on your Apache ( http://modpython.org/ )
