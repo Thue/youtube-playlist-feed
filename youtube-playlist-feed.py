@@ -71,6 +71,7 @@ def index(req):
    #add items to feed
    for episode in items:
       s = episode["snippet"]
+      #For whatever reason, YouTube includes private videos in the results. Which you cannot watch. Remove them.
       if s["title"] != "Private video":
          feed.add(title=s["title"],
                   url="https://youtube.com/watch?v="+s["resourceId"]["videoId"],
