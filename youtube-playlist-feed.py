@@ -71,11 +71,12 @@ def index(req):
    #add items to feed
    for episode in items:
       s = episode["snippet"]
-      feed.add(title=s["title"],
-               url="https://youtube.com/watch?v="+s["resourceId"]["videoId"],
-               published=parser.parse(s["publishedAt"]),
-               updated=parser.parse(s["publishedAt"]),
-               author=channelTitle,
-               )
+      if s["title"] != "Private video":
+         feed.add(title=s["title"],
+                  url="https://youtube.com/watch?v="+s["resourceId"]["videoId"],
+                  published=parser.parse(s["publishedAt"]),
+                  updated=parser.parse(s["publishedAt"]),
+                  author=channelTitle,
+                  )
 
    return feed.to_string()
