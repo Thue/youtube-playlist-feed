@@ -5,6 +5,11 @@ An Apache webserver mod_python script to create an Atom feed from a YouTube
 playlist. An Atom feed is a type of web feed similar to RSS, which can
 be used for web syndication, e.g. in a feed reader such as e.g. "feeder".
 
+Note that you can also get a playlist feed by simply using
+https://www.youtube.com/feeds/videos.xml?playlist_id=YOURPLAYLISTIDHERE
+. But perhaps my script is still useful if you want to do filtering or
+transformation of the items in the playlist.
+
 Usage
 =====================
 
